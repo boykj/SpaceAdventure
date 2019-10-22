@@ -81,6 +81,8 @@ func yesNo() bool {
 		} else if response == "n" || response == "no" {
 			fmt.Println("Fair enough, I'll choose for you")
 			return false
+		} else {
+			fmt.Println("Please enter a valid answer Y/N, or Yes / No")
 		}
 	}
 }
