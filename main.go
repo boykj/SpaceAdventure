@@ -44,6 +44,20 @@ func main() {
 	//Prompt for user to input yes or no for space planet selection
 	
 	yesNo()
+	
+	if yesNo() == true {
+		fmt.Println("Please select a planet from our solar system")
+		fmt.Print("Planet name: ")
+		var pInput string
+		fmt.Scanln(&pInput)
+		
+		for k, v := range p {
+			if k == pInput {
+			fmt.Println(k, v)
+			
+			}
+		}
+	}
 }
 
 func getName() {
@@ -60,20 +74,22 @@ func welcome() {
 	fmt.Println("There are 9 planets to explore")
 }
 
-func pSelect(map) {
+//func pSelect(map) {
+	//for {
 		
-		fmt.Println("Please select a planet from our solar system")
-		fmt.Print("Planet name: ")
-		var pInput string
-		fmt.Scanln(&pInput)
+		//fmt.Println("Please select a planet from our solar system")
+		//fmt.Print("Planet name: ")
+		//var pInput string
+		//fmt.Scanln(&pInput)
 
-		for k, v := range map {
-			if pInput == k {
-			fmt.Println(k, v)
+		//for k, v := range map {
+			//if pInput == k {
+			//fmt.Println(k, v)
 			
-			}
-		}
-}
+			//}
+		//}
+	//}
+//}
 
 func yesNo() bool {
 	reader := bufio.NewReader(os.Stdin)
@@ -92,11 +108,11 @@ func yesNo() bool {
 		
 			//If yes, display prompt to user to enter a planet name and print corresponding sentences
 			
-			fmt.Println("Okay, select a planet from our solar system")
-			fmt.Print("Planet name: ")
-			var input string
-			fmt.Scanln(&input)
-			pSelect()
+			//fmt.Println("Okay, select a planet from our solar system")
+			//fmt.Print("Planet name: ")
+			//var input string
+			//fmt.Scanln(&input)
+			//pSelect()
 			return true
 			
 		} else if response == "n" || response == "no" {
