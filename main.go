@@ -10,18 +10,40 @@ import (
 
 func main() {
 
+	//Display the welcome message
+	
 	welcome()
-	fmt.Print("Enter your name: ")
+	
+	//Early dictionary creation for hard coding the planetary values
+	//Creates a map of strings
+	
+	p := make(map[string][]string)
+	p["Mc"] = []string{"Name: ", "Mercury", " || Description: ", "A very hot planet, closest to the sun"}
+	p["Vn"] = []string{"Venus", "It's very cloudy here!"}
+	p["Ea"] = []string{"Earth", "There is something very familiar about this planet"}
+	p["Mr"] = []string{"Mars", "Known as the red planet."}
+	p["Jp"] = []string{"Jupiter", "A gas giant, with a noticeable red spot."}
+	p["Sa"] = []string{"Saturn", "This planet has beautiful rings around it."}
+	p["Ur"] = []string{"Uranus", "Strangely, this planet rotates around on its side."}
+	p["Np"] = []string{"Neptune", "A very cold planet, furthest from the sun."}
+	p["Pl"] = []string{"Pluto", "I don't care what they say - it's a planet."}
+	
+	//fmt.Println(p["Mc"])
+	//fmt.Println(p["Vn"])
+	
+	for k, v := range p {
+		fmt.Println("k: ", k, "v: ", v)
+	}
+	
+	//Prompt user to enter their name and echo
+	
+	fmt.Println("What's your name?")
 	var input string
 	fmt.Scanln(&input)
 	fmt.Println("Nice to meet you,", input)
 	fmt.Println("My name is drangus, I'm an old friend of Kirk. Lets go on an adventure!")
 	
-	p := make(map[string][]string)
-	
-	p["A"] = []string{"1", "2"}
-	p["B"] = []string{"3", "4"}
-	fmt.Println(p["A"])
+	//Prompt for user to input yes or no for space planet selection
 	
 	yesNo()
 }
