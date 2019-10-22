@@ -56,6 +56,8 @@ func main() {
 		}
 	//If no, randomly select a planet from the map 
 	} else {
+		fmt.Println()
+		fmt.Println("Fair enough, I'll choose for you")
 		for k := range p {
 			fmt.Println(k)
 		}
@@ -82,10 +84,10 @@ func welcome() {
 
 func yesNo() bool {
 	reader := bufio.NewReader(os.Stdin)
+	fmt.Println()
+	fmt.Println("If you want to choose a planet, say yes. Otherwise, say no")
 
 	for {
-		fmt.Println()
-		fmt.Println("If you want to choose a planet, say yes. Otherwise, say no")
 		fmt.Printf("[y/n]:")
 
 		response, err := reader.ReadString('\n')
@@ -96,22 +98,11 @@ func yesNo() bool {
 		response = strings.ToLower(strings.TrimSpace(response))
 
 		if response == "y" || response == "yes" {
-		
-			//If yes, display prompt to user to enter a planet name and print corresponding sentences
-			
-			//fmt.Println("Okay, select a planet from our solar system")
-			//fmt.Print("Planet name: ")
-			//var input string
-			//fmt.Scanln(&input)
-			//pSelect()
 			return true
 			
 		} else if response == "n" || response == "no" {
-			
-			//If no, return false and randomly choose a planet
-			
-			fmt.Println("Fair enough, I'll choose for you")
 			return false
+			
 		} else {
 			fmt.Println("Please enter a valid answer Y/N, or Yes / No")
 		}
